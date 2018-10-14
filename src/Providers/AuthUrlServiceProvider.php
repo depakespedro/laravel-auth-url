@@ -4,7 +4,7 @@ namespace DepakesPedro\LaravelAuthUrl\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AuthUrlProvider extends ServiceProvider
+class AuthUrlServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -15,7 +15,7 @@ class AuthUrlProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/../config/auth_url.php' => config_path('auth_url.php'),
+            __DIR__ . '/../config/auth_url.php' => config_path('auth_url.php'),
         ], 'config');
     }
 
