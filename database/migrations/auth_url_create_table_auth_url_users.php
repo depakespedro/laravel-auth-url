@@ -17,7 +17,7 @@ class CreateTableAuthUrlUsers extends Migration
             $table->increments('id');
 
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on(config('auth_utl.migration.users'));
+            $table->foreign('user_id')->references('id')->on(config('auth_utl.migrations.users'));
 
             $table->string('hash');
             $table->string('params');

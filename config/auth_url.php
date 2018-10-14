@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'model' => [
+    'models' => [
 
         /**
          * Namespace до модели User
          */
-        'User' => 'App\User',
+        'user' => 'App\User',
     ],
 
-    'migration' => [
+    'migrations' => [
         /**
          * Название таблицы для хранения ключей разовой авторизации
          */
