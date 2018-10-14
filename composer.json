@@ -1,0 +1,14 @@
+{
+    "name": "depakespedro/laravel-auth-url",
+    "description": "One-time authorization by url link.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Petrov",
+            "email": "fourbit@yandex.ru",
+            "homepage": "https://moikrug.ru/depakespedro"
+        }
+    ],
+    "minimum-stability": "dev"
+}
