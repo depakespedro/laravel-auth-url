@@ -3,11 +3,18 @@
 
 namespace Depakespedro\LaravelAuthUrl\Contracts;
 
+use Depakespedro\LaravelAuthUrl\Exceptions\NotFoundUserModel;
 use Depakespedro\LaravelAuthUrl\Models\AuthUrl;
 
 interface AuthUrlContract
 {
-    //выдает моедель хеша
+    /**
+     * Создает и сохраняет модель авторизации по ссылке
+     * @param $user
+     * @param array $params
+     * @return AuthUrl
+     * @throws NotFoundUserModel
+     */
     public function createAuthUrl($user, array $params = []): AuthUrl;
 
 //    //достает хеш

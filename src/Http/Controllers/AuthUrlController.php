@@ -8,7 +8,7 @@ use Depakespedro\LaravelAuthUrl\Models\AuthUrl;
 
 class AuthUrlController extends Controller
 {
-    public function login()
+    public function login($hash)
     {
         $userNamespace = app('Depakespedro\LaravelAuthUrl\Models\User');
 

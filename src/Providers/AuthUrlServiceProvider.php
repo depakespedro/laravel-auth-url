@@ -4,7 +4,7 @@ namespace Depakespedro\LaravelAuthUrl\Providers;
 
 use Depakespedro\LaravelAuthUrl\Contracts\AuthUrlContract;
 use Depakespedro\LaravelAuthUrl\Models\AuthUrl;
-use Depakespedro\LaravelAuthUrl\Repositories\AuthUrlRepository;
+use Depakespedro\LaravelAuthUrl\Repositories\AuthUrlManager;
 use Illuminate\Support\ServiceProvider;
 
 class AuthUrlServiceProvider extends ServiceProvider
@@ -32,6 +32,6 @@ class AuthUrlServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->instance('Depakespedro\LaravelAuthUrl\Models\User', config('auth_url.models.user'));
-        $this->app->bind(AuthUrlContract::class, AuthUrlRepository::class);
+        $this->app->bind(AuthUrlContract::class, AuthUrlManager::class);
     }
 }
