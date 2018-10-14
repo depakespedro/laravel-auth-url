@@ -14,13 +14,13 @@
 
     "autoload": {
         "psr-4": {
-            "DepakesPedro\\LaravelAuthUrl\\": "src/"
+            "Depakespedro\\LaravelAuthUrl\\": "src/"
         }
     },
 
     "autoload-dev": {
         "psr-4": {
-            "DepakesPedro\\LaravelAuthUrl\\": "src/"
+            "Depakespedro\\LaravelAuthUrl\\": "src/"
         }
     },
 
