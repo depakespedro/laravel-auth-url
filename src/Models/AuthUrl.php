@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Depakespedro\LaravelAuthUrl\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

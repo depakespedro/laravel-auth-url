@@ -13,8 +13,22 @@
     "minimum-stability": "dev",
 
     "autoload": {
-      "psr-4": {
-        "DepakesPedro\\LaravelAuthUrl\\": "src"
-      }
+        "psr-4": {
+            "DepakesPedro\\LaravelAuthUrl\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "DepakesPedro\\LaravelAuthUrl\\": "src/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Depakespedro\\LaravelAuthUrl\\Providers\\AuthUrlServiceProvider"
+            ]
+        }
     }
 }
