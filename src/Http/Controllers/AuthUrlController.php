@@ -3,21 +3,22 @@
 namespace Depakespedro\LaravelAuthUrl\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Depakespedro\LaravelAuthUrl\Contracts\AuthUrlContract;
-use Depakespedro\LaravelAuthUrl\Models\AuthUrl;
+use Depakespedro\LaravelAuthUrl\Facades\Manager;
 
 class AuthUrlController extends Controller
 {
     public function login($hash)
     {
-        $userNamespace = app('Depakespedro\LaravelAuthUrl\Models\User');
+        $authUrl = Manager::checkHash($hash);
 
-        $user = new $userNamespace();
+        if (is_null($authUrl)) {
+            return redirect(config('auth_url.redirect.error'));
+        }
 
-        $authUrlManager = app(AuthUrlContract::class);
+        $urlRedirect = $authUrl->getUrlRedirect();
 
-        $authUrl = $authUrlManager->createAuthUrl(new AuthUrl());
+        Manager::deleteHash($authUrl->hash);
 
-        dump($authUrl);
+        return redirect($urlRedirect);
     }
 }

@@ -13,13 +13,14 @@ class CreateTableAuthUrlUsers extends Migration
      */
     public function up()
     {
-        Schema::create('auth_url_users', function (Blueprint $table) {
+        Schema::create('auth_urls', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on(config('auth_utl.migrations.users'));
+            $table->foreign('user_id')->references('id')->on(config('auth_url.migrations.users'));
 
             $table->string('hash');
+            $table->string('redirect');
             $table->string('params');
 
             $table->timestamps();

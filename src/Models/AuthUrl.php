@@ -12,4 +12,12 @@ class AuthUrl extends Model
 
         $this->setTable(config('auth_url.migration.auth_urls'));
     }
+
+    public function getUrlRedirect()
+    {
+        $params = unserialize($this->attributes['params']);
+        $query_params = http_build_query($params);
+
+        return $this->attributes['redirect'] . '?' . $query_params;
+    }
 }

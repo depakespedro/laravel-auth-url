@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace Depakespedro\LaravelAuthUrl\Contracts;
 
@@ -11,21 +11,24 @@ interface AuthUrlContract
     /**
      * Создает и сохраняет модель авторизации по ссылке
      * @param $user
+     * @param string $redirect
      * @param array $params
      * @return AuthUrl
      * @throws NotFoundUserModel
      */
-    public function createAuthUrl($user, array $params = []): AuthUrl;
+    public function createHash($user, string $redirect = null, array $params = []): AuthUrl;
 
-//    //достает хеш
-//    public function getHash($hash);
-//
-//    //проверяет данный хеш на способность к авторизации
-//    public function checkHash(AuthUrl $hash);
-//
-//    //удаляет хеш
-//    public function deleteHash(AuthUrl $hash);
-//
-//    //связывает хеш и юзера
-//    public function linkHashUser(AuthUrl $hash, User $user);
+    /**
+     * Проверяет переданный хеш на способность к авторизации
+     * @param string $hash
+     * @return AuthUrl|null
+     */
+    public function checkHash(string $hash): ?AuthUrl;
+
+    /**
+     *  Удаляет хеш из списка бд
+     * @param string $hash
+     * @return bool
+     */
+    public function deleteHash(string $hash): bool;
 }
