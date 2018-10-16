@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Depakespedro\\LaravelAuthUrl\\Providers\\AuthUrlServiceProvider::class"
+                "Depakespedro\\LaravelAuthUrl\\Providers\\AuthUrlServiceProvider"
             ]
         }
     }
