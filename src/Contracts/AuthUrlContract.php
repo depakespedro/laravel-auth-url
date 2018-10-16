@@ -16,7 +16,7 @@ interface AuthUrlContract
      * @return AuthUrl
      * @throws NotFoundUserModel
      */
-    public function createHash($user, string $redirect = null, array $params = []): AuthUrl;
+    public function createUrl($user, string $redirect = null, array $params = []): AuthUrl;
 
     /**
      * Проверяет переданный хеш на способность к авторизации

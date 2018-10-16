@@ -13,6 +13,16 @@ class AuthUrl extends Model
         $this->setTable(config('auth_url.migration.auth_urls'));
     }
 
+    public function user()
+    {
+        return $this->belongsTo(app('Depakespedro\LaravelAuthUrl\Models\User'));
+    }
+
+    public function getUrlAuth()
+    {
+        return route('auth.url', ['hash' => $this->attributes['hash']]);
+    }
+
     public function getUrlRedirect()
     {
         $params = unserialize($this->attributes['params']);

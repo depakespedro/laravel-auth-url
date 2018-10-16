@@ -15,6 +15,8 @@ class AuthUrlController extends Controller
             return redirect(config('auth_url.redirect.error'));
         }
 
+        auth()->login($authUrl->user);
+
         $urlRedirect = $authUrl->getUrlRedirect();
 
         Manager::deleteHash($authUrl->hash);

@@ -21,6 +21,8 @@ return [
         'users' => 'users'
     ],
 
+    'controller_path' => 'app/Http/Controllers/AuthUrlController.php',
+
     /**
      * Редиректы при успешной авторизации и ошибочной
      */

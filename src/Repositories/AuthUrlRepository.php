@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class AuthUrlRepository implements AuthUrlContract
 {
 
-    public function createHash($user, string $redirect = null, array $params = []): AuthUrl
+    public function createUrl($user, string $redirect = null, array $params = []): AuthUrl
     {
         if (get_class($user) !== app('Depakespedro\LaravelAuthUrl\Models\User')) {
             throw new NotFoundUserModel();
