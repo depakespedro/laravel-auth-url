@@ -27,7 +27,7 @@ class AuthUrlServiceProvider extends ServiceProvider
         );
 
         $this->publishes([
-            __DIR__ . '/../../src/Http/Controllers/AuthUrlController.php' => config('controller_path')
+            __DIR__ . '/../../src/Http/Controllers/AuthUrlController.php' => config('auth_url.controller_path')
         ],
             'controller'
         );
