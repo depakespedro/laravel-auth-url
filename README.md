@@ -11,15 +11,16 @@ composer require depakespedro/laravel-auth-url
 ```
 Depakespedro\LaravelAuthUrl\Providers\AuthUrlServiceProvider::class
 ```
-Публикуем миграцию и накатываем ее
-```text
-php artisan vendor:publish --provider='Depakespedro\LaravelAuthUrl\Providers\AuthUrlServiceProvider' --tag=migrations
-php artisan migrate
-```
 
 Публикуем конфиг
 ```text
 php artisan vendor:publish --provider='Depakespedro\LaravelAuthUrl\Providers\AuthUrlServiceProvider' --tag=config
+```
+
+Публикуем миграцию и накатываем ее
+```text
+php artisan vendor:publish --provider='Depakespedro\LaravelAuthUrl\Providers\AuthUrlServiceProvider' --tag=migrations
+php artisan migrate
 ```
 
 Если требуются правки авторизации, то публикуем контроллер
